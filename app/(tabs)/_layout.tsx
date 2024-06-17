@@ -1,34 +1,41 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
-
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+import Feather from "@expo/vector-icons/Feather";
+import { Tabs } from "expo-router";
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
-      }}>
+        tabBarStyle: {
+          backgroundColor: "#202024",
+          borderTopWidth: 0,
+          height: 80,
+        },
+        tabBarActiveTintColor: "#F7DD43",
+        tabBarInactiveTintColor: "#8D8D99",
+        tabBarLabelPosition: "beside-icon",
+        tabBarLabelStyle: {
+          marginLeft: 30,
+          fontSize: 16,
+          fontFamily: "Rajdhani_700Bold",
+        },
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
+          title: "Autenticação",
+          tabBarIcon: ({ color }) => (
+            <Feather size={20} name="key" color={color} />
           ),
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="settings"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+          title: "Servidores",
+          tabBarIcon: ({ color }) => (
+            <Feather size={20} name="server" color={color} />
           ),
         }}
       />
