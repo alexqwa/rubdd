@@ -5,7 +5,7 @@ import { Header } from "@/src/components/Header";
 
 export default function Home() {
   return (
-    <View className="bg-[#121214] flex-1 items-center">
+    <View className="bg-background flex-1 items-center">
       <Header title="Autenticação" />
       <View className="flex-1 justify-center items-center w-full max-w-[80%]">
         <Text className="text-white font-rajdhani_700 text-4xl mb-6">
@@ -32,6 +32,12 @@ export default function Home() {
               <Feather name="edit" color="#8D8D99" size={18} />
             </TouchableOpacity>
           </View>
+          <TextInput
+            selectionColor="#F7DD43"
+            placeholderTextColor="#8D8D99"
+            placeholder="Digite seu CPF"
+            className="w-full bg-foreground text-[#8D8D99] placeholder:font-rajdhani_700 rounded-lg px-4 h-13 border border-outline"
+          />
           <TouchableOpacity
             activeOpacity={0.7}
             className="bg-[#F7DD43] items-center justify-center w-full h-13 rounded-lg"
