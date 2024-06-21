@@ -1,9 +1,10 @@
-import { View, Text, TextInput, TouchableOpacity } from "react-native";
+import { router } from "expo-router";
 import { Feather } from "@expo/vector-icons";
+import { View, Text, TextInput, TouchableOpacity, Alert } from "react-native";
 
 import { Header } from "@/src/components/Header";
 
-export default function Home() {
+export default function AuthHome() {
   return (
     <View className="bg-background flex-1 items-center">
       <Header title="Autenticação" />
@@ -36,10 +37,12 @@ export default function Home() {
             selectionColor="#F7DD43"
             placeholderTextColor="#8D8D99"
             placeholder="Digite seu CPF"
+            keyboardType="number-pad"
             className="w-full bg-foreground text-[#8D8D99] placeholder:font-rajdhani_700 rounded-lg px-4 h-13 border border-outline"
           />
           <TouchableOpacity
             activeOpacity={0.7}
+            onPress={() => router.replace("(home)")}
             className="bg-[#F7DD43] items-center justify-center w-full h-13 rounded-lg"
           >
             <Text className="uppercase text-black text-base font-rajdhani_700">

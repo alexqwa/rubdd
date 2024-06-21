@@ -1,7 +1,7 @@
 import Feather from "@expo/vector-icons/Feather";
 import { Tabs } from "expo-router";
 
-export default function AuthLayout() {
+export default function HomeLayout() {
   return (
     <Tabs
       screenOptions={{
@@ -24,18 +24,18 @@ export default function AuthLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: "Autenticação",
+          title: "Presença",
           tabBarIcon: ({ color }) => (
-            <Feather size={20} name="key" color={color} />
+            <Feather size={20} name="home" color={color} />
           ),
         }}
       />
       <Tabs.Screen
-        name="servers"
+        name="tags"
         options={{
-          title: "Servidores",
+          title: "Etiquetas",
           tabBarIcon: ({ color }) => (
-            <Feather size={20} name="server" color={color} />
+            <Feather size={20} name="tag" color={color} />
           ),
         }}
       />

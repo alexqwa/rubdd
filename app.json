@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "rubdd",
-    "slug": "rubdd",
-    "version": "1.0.0",
+    "name": "RUB",
+    "slug": "RUB",
+    "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
@@ -16,18 +16,22 @@
       "supportsTablet": true
     },
     "android": {
+      "versionCode": 3,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#121214"
       },
-      "package": "com.outumegames.rubdd"
+      "package": "com.outumegames.rumbdd"
     },
     "web": {
       "bundler": "metro",
       "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
-    "plugins": ["expo-router", "expo-font"],
+    "plugins": [
+      "expo-router",
+      "expo-font"
+    ],
     "experiments": {
       "typedRoutes": true
     },
@@ -36,7 +40,7 @@
         "origin": false
       },
       "eas": {
-        "projectId": "04ff64c9-c7e4-4d39-b0b6-8ad6bd6317eb"
+        "projectId": "1307e510-8311-4de2-8243-c14a9085ea53"
       }
     }
   }
