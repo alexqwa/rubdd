@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Stack } from "expo-router";
 import { useFonts } from "expo-font";
+import { StatusBar } from "react-native";
 import {
   Roboto_400Regular,
   Roboto_500Medium,
@@ -40,14 +41,18 @@ export default function RootLayout() {
   }
 
   return (
-    <Stack
-      screenOptions={{
-        headerShown: false,
-      }}
-    >
-      <Stack.Screen name="index" />
-      <Stack.Screen name="(tabs)" />
-      <Stack.Screen name="(home)" />
-    </Stack>
+    <>
+      <Stack
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <Stack.Screen name="index" />
+        <Stack.Screen name="products" />
+        <Stack.Screen name="(tabs)" />
+        <Stack.Screen name="(home)" />
+      </Stack>
+      <StatusBar translucent barStyle={"light-content"} />
+    </>
   );
 }
