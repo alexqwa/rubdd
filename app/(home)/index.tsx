@@ -3,6 +3,31 @@ import { View, Text, ScrollView } from "react-native";
 import { Header } from "@/src/components/Header";
 import { ListStreet } from "@/src/components/ListStreet";
 
+const data = [
+"Corredor 1",
+"Corredor 2",
+"Corredor 3",
+"Corredor 4",
+"Corredor 5",
+"Corredor 6",
+"Corredor 7",
+"Corredor 8",
+"Corredor 9",
+"Corredor 10",
+"Corredor 11",
+"Corredor 12",
+"Corredor 13",
+"Corredor 14",
+"Corredor 15",
+"Corredor 16",
+"Corredor 17",
+"Corredor 18",
+"Corredor 19",
+"Corredor 20",
+"Corredor 21",
+"Havaianas",
+]
+
 export default function Home() {
   return (
     <View className="items-center bg-background flex-1">
@@ -26,28 +51,11 @@ export default function Home() {
           showsVerticalScrollIndicator={false}
           contentContainerStyle={{ paddingBottom: 30 }}
         >
-          <ListStreet title="Corredor 01" active={false} />
-          <ListStreet title="Corredor 02" active={false} />
-          <ListStreet title="Corredor 03" active={false} />
-          <ListStreet title="Corredor 04" active={false} />
-          <ListStreet title="Corredor 05" active={false} />
-          <ListStreet title="Corredor 06" active={false} />
-          <ListStreet title="Corredor 07" active={false} />
-          <ListStreet title="Corredor 08" active={false} />
-          <ListStreet title="Corredor 09" active={false} />
-          <ListStreet title="Corredor 10" active={false} />
-          <ListStreet title="Corredor 11" active={false} />
-          <ListStreet title="Corredor 12" active={false} />
-          <ListStreet title="Corredor 13" active={false} />
-          <ListStreet title="Corredor 14" active={false} />
-          <ListStreet title="Corredor 15" active={false} />
-          <ListStreet title="Corredor 16" active={false} />
-          <ListStreet title="Corredor 17" active={false} />
-          <ListStreet title="Corredor 18" active={false} />
-          <ListStreet title="Corredor 19" active={false} />
-          <ListStreet title="Corredor 20" active={false} />
-          <ListStreet title="Corredor 21" active={false} />
-          <ListStreet title="Havaianas" active={false} />
+          {Array.from({ length: (data.length)}).map((_, i) => {
+            return (
+              <ListStreet key={i} title={data[i]} active={false} />
+            )
+          })}
         </ScrollView>
       </View>
     </View>

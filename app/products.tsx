@@ -2,12 +2,6 @@ import { Feather } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { View, Text, TouchableOpacity } from "react-native";
 
-const data = [
-  { label: "Bipar todos os produtos", value: "1" },
-  { label: "Bipar por quantidade", value: "2" },
-  { label: "Bipar ", value: "3" },
-];
-
 export default function Products() {
   const { goBack } = useNavigation();
 
@@ -38,7 +32,6 @@ export default function Products() {
             <Feather name="chevron-down" size={18} color="#fff" />
           </View>
         </View>
-
         <Text className="text-white text-base font-poppins_600 mt-10">
           Lista de produtos (203):
         </Text>
