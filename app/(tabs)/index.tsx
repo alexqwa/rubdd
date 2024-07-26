@@ -1,6 +1,6 @@
 import { router } from "expo-router";
 import { Feather } from "@expo/vector-icons";
-import { View, Text, TextInput, TouchableOpacity, Alert } from "react-native";
+import { View, Text, TextInput, TouchableOpacity } from "react-native";
 
 import { Header } from "@/src/components/Header";
 
@@ -8,6 +8,7 @@ export default function AuthHome() {
   return (
     <View className="bg-background flex-1 items-center">
       <Header title="Autenticação" />
+          
       <View className="flex-1 justify-center items-center w-full max-w-[90%]">
         <Text className="text-white font-rajdhani_700 text-4xl mb-6">
           RUB <Text className="text-green-500">UNLOCKED</Text>
@@ -17,6 +18,7 @@ export default function AuthHome() {
           {"\n"}
           sempre no verde!
         </Text>
+
         <View className="space-y-3 w-full mt-6">
           <View className="relative">
             <TextInput

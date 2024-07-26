@@ -1,13 +1,34 @@
-import { View, Text } from "react-native";
-import { Feather } from "@expo/vector-icons";
+import { useEffect, useState } from "react"
+import { View, Text } from "react-native"
+import { Feather } from "@expo/vector-icons"
+import * as Network from "expo-network"
+import clsx from "clsx"
 
-import { Header } from "@/src/components/Header";
+import { Header } from "@/src/components/Header"
 
 export default function Servers() {
+  const [address, setAddress] = useState("")
+  const [validNetwork, setValidNetwork] = useState(false)
+
+  useEffect(() => {
+    fecthAddressIp()
+
+    if (address === "10.46.3.223") {
+      setValidNetwork(true)
+    } else {
+      setValidNetwork(false)
+    }
+  }, [address])
+
+  async function fecthAddressIp() {
+    const serverAddress = await Network.getIpAddressAsync()
+    setAddress(serverAddress)
+  }
+
   return (
     <View className="flex-1 items-center bg-background">
       <Header title="Servidores" />
-      <View className="flex-1 w-full max-w-[80%] mt-12">
+      <View className="flex-1 w-full max-w-[90%] mt-12">
         <View className="space-y-2 mb-8">
           <Text className="text-white font-rajdhani_700 text-2xl">
             Servidores disponíveis
@@ -16,54 +37,31 @@ export default function Servers() {
             Todos os servidores disponíveis para{"\n"}se conectar no momento!
           </Text>
         </View>
-        <View className="space-y-4">
-          <View className="w-full relative bg-foreground border border-outline h-14 rounded-lg justify-center pl-6">
-            <View className="flex-row items-center space-x-4">
-              <Feather name="server" size={18} color="#8D8D99" />
-              <Text className="text-[#8D8D99] text-base opacity-80 font-rajdhani_700">
-                10.46.3.223:4280
-              </Text>
-            </View>
-            <View className="h-2 w-2 right-8 rounded-full bg-red-500 absolute" />
-          </View>
-          <View className="w-full relative bg-foreground border border-outline h-14 rounded-lg justify-center pl-6">
-            <View className="flex-row items-center space-x-4">
-              <Feather name="server" size={18} color="#8D8D99" />
-              <Text className="text-[#8D8D99] text-base opacity-80 font-rajdhani_700">
-                10.46.3.223:4280
-              </Text>
-            </View>
-            <View className="h-2 w-2 right-8 rounded-full bg-red-500 absolute" />
-          </View>
-          <View className="w-full relative bg-foreground border border-outline h-14 rounded-lg justify-center pl-6">
-            <View className="flex-row items-center space-x-4">
-              <Feather name="server" size={18} color="#8D8D99" />
-              <Text className="text-[#8D8D99] text-base opacity-80 font-rajdhani_700">
-                10.46.3.223:4280
-              </Text>
-            </View>
-            <View className="h-2 w-2 right-8 rounded-full bg-red-500 absolute" />
-          </View>
-          <View className="w-full relative bg-foreground border border-outline h-14 rounded-lg justify-center pl-6">
-            <View className="flex-row items-center space-x-4">
-              <Feather name="server" size={18} color="#8D8D99" />
-              <Text className="text-[#8D8D99] text-base opacity-80 font-rajdhani_700">
-                10.46.3.223:4280
-              </Text>
-            </View>
-            <View className="h-2 w-2 right-8 rounded-full bg-red-500 absolute" />
-          </View>
-          <View className="w-full relative bg-foreground border border-outline h-14 rounded-lg justify-center pl-6">
-            <View className="flex-row items-center space-x-4">
-              <Feather name="server" size={18} color="#8D8D99" />
-              <Text className="text-[#8D8D99] text-base opacity-80 font-rajdhani_700">
-                10.46.3.223:4280
-              </Text>
-            </View>
-            <View className="h-2 w-2 right-8 rounded-full bg-red-500 absolute" />
-          </View>
+        <View className="space-y-2">
+          {Array.from({ length: 6 }).map((_, i) => {
+            return (
+              <View
+                key={i}
+                className="w-full relative bg-foreground border border-outline h-14 rounded-lg justify-center pl-6"
+              >
+                <View className="flex-row items-center space-x-4">
+                  <Feather name="server" size={18} color="#8D8D99" />
+                  <Text className="text-[#8D8D99] text-base opacity-80 font-rajdhani_700">
+                    10.46.3.223:4280
+                  </Text>
+                </View>
+                <View
+                  className={clsx("h-2 w-2 right-8 rounded-full absolute", {
+                    ["bg-red-500"]: validNetwork === false,
+                    ["bg-green-500"]: validNetwork === true,
+                  })}
+                />
+              </View>
+            )
+          })}
         </View>
       </View>
     </View>
-  );
+  )
 }
+//
