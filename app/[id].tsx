@@ -1,10 +1,12 @@
 import { Dropdown } from "@/src/components/Dropdown"
 import { Feather } from "@expo/vector-icons"
 import { useNavigation } from "@react-navigation/native"
-import { View, Text, TouchableOpacity, ScrollView } from "react-native"
+import { View, Text, TouchableOpacity } from "react-native"
+import { useLocalSearchParams, usePathname } from "expo-router"
 
-export default function Products() {
+export default function StreetRoute() {
   const { goBack } = useNavigation()
+  const { id } = useLocalSearchParams()
 
   return (
     <View className="flex-1 items-center bg-background">
@@ -17,7 +19,7 @@ export default function Products() {
             <Feather name="arrow-left" size={18} color="#fff" />
           </TouchableOpacity>
           <Text className="text-white font-rajdhani_700 text-base">
-            Presença: Corredor 05
+            Presença: {id}
           </Text>
         </View>
       </View>
@@ -31,7 +33,7 @@ export default function Products() {
 
         <View className="w-full max-w-[90%]">
           <Text className="text-white text-base font-poppins_600 mt-10">
-            Lista de produtos (203):
+            Lista de produtos (0):
           </Text>
         </View>
       </View>

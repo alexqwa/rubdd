@@ -1,31 +1,33 @@
-import { View, Text, ScrollView } from "react-native";
+import { View, Text, ScrollView } from "react-native"
 
-import { Header } from "@/src/components/Header";
-import { ListStreet } from "@/src/components/ListStreet";
+import { Header } from "@/src/components/Header"
+import { ListStreet } from "@/src/components/ListStreet"
 
 const data = [
-"Corredor 1",
-"Corredor 2",
-"Corredor 3",
-"Corredor 4",
-"Corredor 5",
-"Corredor 6",
-"Corredor 7",
-"Corredor 8",
-"Corredor 9",
-"Corredor 10",
-"Corredor 11",
-"Corredor 12",
-"Corredor 13",
-"Corredor 14",
-"Corredor 15",
-"Corredor 16",
-"Corredor 17",
-"Corredor 18",
-"Corredor 19",
-"Corredor 20",
-"Corredor 21",
-"Havaianas",
+  "Corredor 1",
+  "Corredor 2",
+  "Corredor 3",
+  "Corredor 4",
+  "Corredor 5",
+  "Corredor 6",
+  "Corredor 7",
+  "Corredor 8",
+  "Corredor 9",
+  "Corredor 10",
+  "Corredor 11",
+  "Corredor 12",
+  "Corredor 13",
+  "Corredor 14",
+  "Corredor 15",
+  "Corredor 16",
+  "Corredor 17",
+  "Corredor 18",
+  "Corredor 19",
+  "Corredor 20",
+  "Corredor 21",
+  "Havaianas",
+  "Freezers 01",
+  "Freezers 02",
 ]
 
 export default function Tags() {
@@ -51,13 +53,18 @@ export default function Tags() {
           showsVerticalScrollIndicator={false}
           contentContainerStyle={{ paddingBottom: 30 }}
         >
-          {Array.from({ length: (data.length)}).map((_, i) => {
+          {Array.from({ length: data.length }).map((_, i) => {
             return (
-              <ListStreet key={i} title={data[i]} active={true} />
+              <ListStreet
+                key={i}
+                streetAddress={data[i]}
+                title={data[i]}
+                active={true}
+              />
             )
           })}
         </ScrollView>
       </View>
     </View>
-  );
+  )
 }
