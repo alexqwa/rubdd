@@ -1,15 +1,15 @@
-import { View, Text } from "react-native";
+import { View, Text } from "react-native"
 
 type HeaderProps = {
-  title: string;
-};
+  title: string
+}
 
 export function Header({ title }: HeaderProps) {
   return (
-    <View className="bg-[#202024] h-28 w-full items-center justify-center">
+    <View className="bg-foreground h-28 w-full items-center justify-center">
       <Text className="text-white font-rajdhani_700 mt-10 text-base">
-        {title}           
+        {title}
       </Text>
     </View>
-  );
+  )
 }

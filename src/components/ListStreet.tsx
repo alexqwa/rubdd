@@ -1,7 +1,7 @@
-import { View, Text, TouchableOpacity } from "react-native"
-import { Feather } from "@expo/vector-icons"
 import clsx from "clsx"
 import { router } from "expo-router"
+import { Feather } from "@expo/vector-icons"
+import { View, Text, TouchableOpacity } from "react-native"
 
 type ListStreetProps = {
   title: string
@@ -25,7 +25,7 @@ export function ListStreet({ title, active, streetAddress }: ListStreetProps) {
       </View>
       <TouchableOpacity
         activeOpacity={0.7}
-        onPress={() => router.push(`${streetAddress}`)}
+        onPress={() => router.push(streetAddress)}
         className="bg-foreground flex-1 rounded-r-lg items-center justify-evenly border border-outline flex-row"
       >
         <Feather name="edit" size={16} color="#fff" />
