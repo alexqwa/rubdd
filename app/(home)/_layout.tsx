@@ -26,7 +26,7 @@ export default function HomeLayout() {
         options={{
           title: "Presença",
           tabBarIcon: ({ color }) => (
-            <Feather size={20} name="home" color={color} />
+            <Feather size={20} name="map" color={color} />
           ),
         }}
       />

@@ -3,13 +3,17 @@ import { router } from "expo-router"
 import { Feather } from "@expo/vector-icons"
 import { View, Text, TouchableOpacity } from "react-native"
 
-type ListStreetProps = {
+type ListOfDepartamentsProps = {
   title: string
   active: boolean
-  streetAddress: string
+  address: string
 }
 
-export function ListStreet({ title, active, streetAddress }: ListStreetProps) {
+export function ListOfDepartaments({
+  title,
+  active,
+  address,
+}: ListOfDepartamentsProps) {
   return (
     <View className="w-full h-13 flex-row mb-2">
       <View className="w-[40px] rounded-l-lg bg-foreground items-center justify-center border border-outline">
@@ -21,15 +25,15 @@ export function ListStreet({ title, active, streetAddress }: ListStreetProps) {
         />
       </View>
       <View className="max-w-[60%] bg-foreground w-full justify-center pl-4 border-t-[1px] border-b-[1px] border-outline">
-        <Text className="text-white font-poppins_500">{title}</Text>
+        <Text className="text-white text-base font-rajdhani_700">{title}</Text>
       </View>
       <TouchableOpacity
         activeOpacity={0.7}
-        onPress={() => router.push(streetAddress)}
+        onPress={() => router.push(`/departament/${address}`)}
         className="bg-foreground flex-1 rounded-r-lg items-center justify-evenly border border-outline flex-row"
       >
         <Feather name="edit" size={16} color="#fff" />
-        <Text className="text-white font-rajdhani_700">Editar</Text>
+        <Text className="text-white font-rajdhani_700">Abrir</Text>
       </TouchableOpacity>
     </View>
   )

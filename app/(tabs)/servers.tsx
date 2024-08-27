@@ -27,7 +27,7 @@ export default function Servers() {
 
   return (
     <View className="flex-1 items-center bg-background">
-      <Header title="Servidores" />
+      <Header title="Servidores" back={false} />
       <View className="flex-1 w-full max-w-[90%] mt-12">
         <View className="space-y-2 mb-8">
           <Text className="text-white font-rajdhani_700 text-2xl">

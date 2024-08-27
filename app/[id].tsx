@@ -47,7 +47,7 @@ export default function StreetRoute() {
             <Feather name="arrow-left" size={18} color="#fff" />
           </TouchableOpacity>
           <Text className="text-white font-rajdhani_700 text-base">
-            Presença: {id}
+            Presença: {id.toString()}
           </Text>
         </View>
       </View>
@@ -61,7 +61,7 @@ export default function StreetRoute() {
 
         <View className="w-full max-w-[90%] flex-1">
           <Text className="text-white text-base font-poppins_600 mt-10">
-            Lista de produtos (0):
+            Lista de produtos ({data.length}):
           </Text>
           <ScrollView>
             {Array.from({ length: data.length }).map((_, i) => {

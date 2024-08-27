@@ -1,5 +1,5 @@
-import { router } from "expo-router";
-import { View, Text, TouchableOpacity } from "react-native";
+import { router } from "expo-router"
+import { View, Text, TouchableOpacity } from "react-native"
 
 export default function Onboarding() {
   return (
@@ -11,7 +11,7 @@ export default function Onboarding() {
         </Text>
         <TouchableOpacity
           activeOpacity={0.7}
-          onPress={() => router.replace("(tabs)")}
+          onPress={() => router.replace("/(tabs)")}
           className="w-full bg-[#F7DD43] h-[52px] rounded-lg items-center justify-center"
         >
           <Text className="uppercase text-black font-rajdhani_700 text-base">
@@ -24,5 +24,5 @@ export default function Onboarding() {
         </Text>
       </View>
     </View>
-  );
+  )
 }
