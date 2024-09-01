@@ -31,7 +31,7 @@ export default function Home() {
               key={i}
               title={data[i]}
               address={data[i]}
-              active={true}
+              active={false}
             />
           )
         })}

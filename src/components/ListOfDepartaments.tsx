@@ -1,5 +1,5 @@
 import clsx from "clsx"
-import { router } from "expo-router"
+import { router, Link } from "expo-router"
 import { Feather } from "@expo/vector-icons"
 import { View, Text, TouchableOpacity } from "react-native"
 

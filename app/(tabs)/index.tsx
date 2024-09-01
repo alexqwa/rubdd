@@ -1,14 +1,14 @@
-import { router } from "expo-router";
-import { Feather } from "@expo/vector-icons";
-import { View, Text, TextInput, TouchableOpacity } from "react-native";
+import { router } from "expo-router"
+import { Feather } from "@expo/vector-icons"
+import { View, Text, TextInput, TouchableOpacity } from "react-native"
 
-import { Header } from "@/src/components/Header";
+import { Header } from "@/src/components/Header"
 
 export default function AuthHome() {
   return (
     <View className="bg-background flex-1 items-center">
-      <Header title="Autenticação" />
-          
+      <Header title="Autenticação" back={false} />
+
       <View className="flex-1 justify-center items-center w-full max-w-[90%]">
         <Text className="text-white font-rajdhani_700 text-4xl mb-6">
           RUB <Text className="text-green-500">UNLOCKED</Text>
@@ -44,7 +44,7 @@ export default function AuthHome() {
           />
           <TouchableOpacity
             activeOpacity={0.7}
-            onPress={() => router.replace("(home)")}
+            onPress={() => router.replace("/(home)")}
             className="bg-[#F7DD43] items-center justify-center w-full h-13 rounded-lg"
           >
             <Text className="uppercase text-black text-base font-rajdhani_700">
@@ -54,5 +54,5 @@ export default function AuthHome() {
         </View>
       </View>
     </View>
-  );
+  )
 }

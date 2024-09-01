@@ -15,7 +15,7 @@ export default function Onboarding() {
           className="w-full bg-[#F7DD43] h-[52px] rounded-lg items-center justify-center"
         >
           <Text className="uppercase text-black font-rajdhani_700 text-base">
-            Entrar para área de servidores
+            Entrar para área de autenticação
           </Text>
         </TouchableOpacity>
         <Text className="text-[#C4C4CC] text-center font-poppins_400 text-sm">

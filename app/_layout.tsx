@@ -18,6 +18,10 @@ import * as SplashScreen from "expo-splash-screen"
 
 SplashScreen.preventAutoHideAsync()
 
+// export const unstable_settings = {
+//   initialRouteName: "/(tabs)/index",
+// }
+
 export default function RootLayout() {
   const [fontsLoaded, fontError] = useFonts({
     Rajdhani_700Bold,
@@ -47,9 +51,8 @@ export default function RootLayout() {
           headerShown: false,
         }}
       >
-        <Stack.Screen name="index" />
-        <Stack.Screen name="(home)" />
         <Stack.Screen name="(tabs)" />
+        <Stack.Screen name="(home)" />
       </Stack>
       <StatusBar translucent barStyle={"light-content"} />
     </>

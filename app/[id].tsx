@@ -4,54 +4,57 @@ import { useNavigation } from "@react-navigation/native"
 import { View, Text, TouchableOpacity, ScrollView } from "react-native"
 
 import { Dropdown } from "@/src/components/Dropdown"
+import { Header } from "@/src/components/Header"
 
 const data = [
-  "Corredor 1",
-  "Corredor 2",
-  "Corredor 3",
-  "Corredor 4",
-  "Corredor 5",
-  "Corredor 6",
-  "Corredor 7",
-  "Corredor 8",
-  "Corredor 9",
-  "Corredor 10",
-  "Corredor 11",
-  "Corredor 12",
-  "Corredor 13",
-  "Corredor 14",
-  "Corredor 15",
-  "Corredor 16",
-  "Corredor 17",
-  "Corredor 18",
-  "Corredor 19",
-  "Corredor 20",
-  "Corredor 21",
-  "Havaianas",
-  "Freezers 01",
-  "Freezers 02",
+  "50188: LAVA ROUPAS PO ASSIM SCH 2,4KG BICARBONA",
+  "50187: LAVA ROUPAS PO ASSIM SCH 4KG BICARBONATO",
+  "51251: LAVA ROUPAS PO MINUANO CX 800G PERF",
+  "23708: LAVA ROUPAS PO MON BIJOU CX 500G COCO",
+  "54462: LAVA ROUPAS PO OMO CX 1,6KG LAV",
+  "38149: LAVA ROUPAS PO OMO CX 800G PURO CUIDADO",
+  "55367: LAVA ROUPAS PO TIXAN L800 P720G PRIMAV",
+  "49113: LAVA ROUPAS PO TIXAN YPE CX 1,6KG PRIMAV",
+  "49115: LAVA ROUPAS PO TIXAN YPE SCH 4KG PRIMAV",
+  "49117: LAVA ROUPAS PO YPE SCH 8KG PRO USO GERAL",
+  "52783: TIRA MANCHAS GEL QBOA 2L CORES",
+  "50571: TIRA MANCHAS PO ASSIM 380G SCH COLORIDAS",
+  "57360: TIRA MANCHAS PO MON BIJOU 3EM1 350G 02",
+  "50188: LAVA ROUPAS PO ASSIM SCH 2,4KG BICARBONA",
+  "50187: LAVA ROUPAS PO ASSIM SCH 4KG BICARBONATO",
+  "51251: LAVA ROUPAS PO MINUANO CX 800G PERF",
+  "23708: LAVA ROUPAS PO MON BIJOU CX 500G COCO",
+  "54462: LAVA ROUPAS PO OMO CX 1,6KG LAV",
+  "38149: LAVA ROUPAS PO OMO CX 800G PURO CUIDADO",
+  "55367: LAVA ROUPAS PO TIXAN L800 P720G PRIMAV",
+  "49113: LAVA ROUPAS PO TIXAN YPE CX 1,6KG PRIMAV",
+  "49115: LAVA ROUPAS PO TIXAN YPE SCH 4KG PRIMAV",
+  "49117: LAVA ROUPAS PO YPE SCH 8KG PRO USO GERAL",
+  "52783: TIRA MANCHAS GEL QBOA 2L CORES",
+  "50571: TIRA MANCHAS PO ASSIM 380G SCH COLORIDAS",
+  "57360: TIRA MANCHAS PO MON BIJOU 3EM1 350G 02",
+  "50188: LAVA ROUPAS PO ASSIM SCH 2,4KG BICARBONA",
+  "50187: LAVA ROUPAS PO ASSIM SCH 4KG BICARBONATO",
+  "51251: LAVA ROUPAS PO MINUANO CX 800G PERF",
+  "23708: LAVA ROUPAS PO MON BIJOU CX 500G COCO",
+  "54462: LAVA ROUPAS PO OMO CX 1,6KG LAV",
+  "38149: LAVA ROUPAS PO OMO CX 800G PURO CUIDADO",
+  "55367: LAVA ROUPAS PO TIXAN L800 P720G PRIMAV",
+  "49113: LAVA ROUPAS PO TIXAN YPE CX 1,6KG PRIMAV",
+  "49115: LAVA ROUPAS PO TIXAN YPE SCH 4KG PRIMAV",
+  "49117: LAVA ROUPAS PO YPE SCH 8KG PRO USO GERAL",
+  "52783: TIRA MANCHAS GEL QBOA 2L CORES",
+  "50571: TIRA MANCHAS PO ASSIM 380G SCH COLORIDAS",
+  "57360: TIRA MANCHAS PO MON BIJOU 3EM1 350G 02",
 ]
 
 export default function StreetRoute() {
-  const { goBack } = useNavigation()
   const { id } = useLocalSearchParams()
 
   return (
     <View className="flex-1 items-center bg-background">
-      <View className="bg-[#202024] h-28 w-full items-center justify-center">
-        <View className="relative w-full max-w-[90%] justify-center items-center flex-row mt-10">
-          <TouchableOpacity
-            onPress={() => goBack()}
-            className="p-4 -m-4 absolute left-0"
-          >
-            <Feather name="arrow-left" size={18} color="#fff" />
-          </TouchableOpacity>
-          <Text className="text-white font-rajdhani_700 text-base">
-            Presença: {id.toString()}
-          </Text>
-        </View>
-      </View>
-      <View className="mt-10 flex-1 items-start w-full max-w-[90%]">
+      <Header title="Presença" parameter={id.toString()} back={true} />
+      <View className="mt-10 flex-1 w-full max-w-[90%]">
         <View className="w-full space-y-3">
           <Text className="text-white font-poppins_500">
             Formas de manipulação
@@ -59,14 +62,17 @@ export default function StreetRoute() {
           <Dropdown />
         </View>
 
-        <View className="w-full max-w-[90%] flex-1">
-          <Text className="text-white text-base font-poppins_600 mt-10">
+        <View className="flex-1">
+          <Text className="text-white text-base font-poppins_600 mt-10 mb-4">
             Lista de produtos ({data.length}):
           </Text>
-          <ScrollView>
+          <ScrollView
+            contentContainerStyle={{ paddingBottom: 60 }}
+            showsVerticalScrollIndicator={false}
+          >
             {Array.from({ length: data.length }).map((_, i) => {
               return (
-                <Text className="text-white" key={i}>
+                <Text className="text-white font-roboto_400 text-base" key={i}>
                   {data[i]}
                 </Text>
               )

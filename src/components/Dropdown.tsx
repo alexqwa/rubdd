@@ -27,7 +27,7 @@ export function Dropdown() {
         />
       </TouchableOpacity>
       {expanded ? (
-        <View className="bg-foreground border border-outline rounded-b-lg -mt-[1px] px-4 py-3 max-h-[250px]">
+        <View className="bg-foreground border border-outline rounded-b-lg -mt-[1px] px-4 max-h-[250px]">
           <FlatList
             ItemSeparatorComponent={() => (
               <View className="h-[1px] bg-[#323238]" />
@@ -46,7 +46,7 @@ export function Dropdown() {
               },
             ]}
             renderItem={({ item }) => (
-              <TouchableOpacity activeOpacity={0.7} className="p-2">
+              <TouchableOpacity activeOpacity={0.7} className="py-4">
                 <Text className="text-white font-poppins_500">
                   {item.value}
                 </Text>

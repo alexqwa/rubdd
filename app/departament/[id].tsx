@@ -1,5 +1,5 @@
-import { View, Text, ScrollView } from "react-native"
 import { useLocalSearchParams } from "expo-router"
+import { View, Text, ScrollView } from "react-native"
 
 import { Header } from "@/src/components/Header"
 import { ListOfStreets } from "@/src/components/ListOfStreets"
