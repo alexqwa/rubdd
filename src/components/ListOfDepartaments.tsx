@@ -1,5 +1,5 @@
 import clsx from "clsx"
-import { router, Link } from "expo-router"
+import { router } from "expo-router"
 import { Feather } from "@expo/vector-icons"
 import { View, Text, TouchableOpacity } from "react-native"
 
@@ -28,11 +28,19 @@ export function ListOfDepartaments({
         <Text className="text-white text-base font-rajdhani_700">{title}</Text>
       </View>
       <TouchableOpacity
+        disabled={!active}
         activeOpacity={0.7}
-        onPress={() => router.push(`/departament/${address}`)}
-        className="bg-foreground flex-1 rounded-r-lg items-center justify-evenly border border-outline flex-row"
+        onPress={
+          active ? () => router.push(`/departament/${address}`) : undefined
+        }
+        className={clsx(
+          "bg-foreground flex-1 rounded-r-lg items-center justify-evenly border border-outline flex-row",
+          {
+            ["bg-foreground/80"]: active === false,
+          }
+        )}
       >
-        <Feather name="edit" size={16} color="#fff" />
+        <Feather name="external-link" size={16} color="#fff" />
         <Text className="text-white font-rajdhani_700">Abrir</Text>
       </TouchableOpacity>
     </View>

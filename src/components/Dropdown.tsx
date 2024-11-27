@@ -11,7 +11,7 @@ export function Dropdown() {
     <View className="mt-4">
       <TouchableOpacity
         className={clsx(
-          "bg-foreground h-13 border border-outline rounded-lg justify-between flex-row items-center px-6",
+          "bg-foreground h-13 border border-outline rounded-lg justify-between flex-row items-center px-4",
           {
             ["rounded-b-none"]: expanded === true,
           }
@@ -19,7 +19,9 @@ export function Dropdown() {
         activeOpacity={0.7}
         onPress={toggleExpanded}
       >
-        <Text className="text-white font-poppins_500">Selecione o modelo</Text>
+        <Text className="text-white font-rajdhani_700 text-base">
+          Selecione o modelo
+        </Text>
         <Feather
           name={expanded ? "chevron-up" : "chevron-down"}
           size={18}

@@ -8,7 +8,6 @@ export default function AuthHome() {
   return (
     <View className="bg-background flex-1 items-center">
       <Header title="Autenticação" back={false} />
-
       <View className="flex-1 justify-center items-center w-full max-w-[90%]">
         <Text className="text-white font-rajdhani_700 text-4xl mb-6">
           RUB <Text className="text-green-500">UNLOCKED</Text>
@@ -25,20 +24,15 @@ export default function AuthHome() {
               editable={false}
               selectionColor="#F7DD43"
               placeholderTextColor="#8D8D99"
-              placeholder="http://10.46.3.223:4280"
+              placeholder="HTTP://10.46.3.223:4280"
               className="w-full bg-foreground text-[#8D8D99] placeholder:font-rajdhani_700 rounded-lg px-4 h-13 border border-outline"
             />
-            <TouchableOpacity
-              className="absolute top-4 right-6"
-              activeOpacity={0.7}
-            >
-              <Feather name="edit" color="#8D8D99" size={18} />
-            </TouchableOpacity>
+            <View className="h-2 w-2 rounded-full bg-green-500 absolute right-6 top-[21px]" />
           </View>
           <TextInput
             selectionColor="#F7DD43"
             placeholderTextColor="#8D8D99"
-            placeholder="Digite seu CPF"
+            placeholder="DIGITE SEU CPF"
             keyboardType="number-pad"
             className="w-full bg-foreground text-[#8D8D99] placeholder:font-rajdhani_700 rounded-lg px-4 h-13 border border-outline"
           />

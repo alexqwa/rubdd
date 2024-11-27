@@ -5,13 +5,12 @@ import { Header } from "@/src/components/Header"
 import { ListOfStreets } from "@/src/components/ListOfStreets"
 
 const data = [
-  "Corredor 05",
-  "Corredor 06",
-  "Corredor 07",
-  "Corredor 08",
-  "Corredor 09",
-  "Corredor 10",
   "Corredor 11",
+  "Corredor 13",
+  "Corredor 15",
+  "Corredor 17",
+  "Corredor 19",
+  "Checkstand",
 ]
 
 export default function StreetRoute() {

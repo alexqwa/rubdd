@@ -18,8 +18,8 @@ export default function Onboarding() {
             Entrar para área de autenticação
           </Text>
         </TouchableOpacity>
-        <Text className="text-[#C4C4CC] text-center font-poppins_400 text-sm">
-          Não utilizamos nenhuma informação além do seu cpf para fazer acesso ao
+        <Text className="text-[#C4C4CC] text-center font-rajdhani_700 text-base">
+          Não utilizamos nenhuma informação além do seu CPF para fazer acesso ao
           servidor.
         </Text>
       </View>

@@ -24,9 +24,15 @@ export function ListOfStreets({ title, active, address }: ListOfStreetsProps) {
         <Text className="text-white text-base font-rajdhani_700">{title}</Text>
       </View>
       <TouchableOpacity
+        disabled={!active}
         activeOpacity={0.7}
-        onPress={() => router.push(`/${address}`)}
-        className="bg-foreground flex-1 rounded-r-lg items-center justify-evenly border border-outline flex-row"
+        onPress={active ? () => router.push(`/${address}`) : undefined}
+        className={clsx(
+          "bg-foreground flex-1 rounded-r-lg items-center justify-evenly border border-outline flex-row",
+          {
+            ["bg-foreground/80"]: active === false,
+          }
+        )}
       >
         <Feather name="edit" size={16} color="#fff" />
         <Text className="text-white font-rajdhani_700">Editar</Text>

@@ -9,7 +9,7 @@ export default function HomeLayout() {
         tabBarStyle: {
           backgroundColor: "#202024",
           borderTopWidth: 0,
-          height: 80,
+          height: 100,
         },
         tabBarActiveTintColor: "#F7DD43",
         tabBarInactiveTintColor: "#8D8D99",
@@ -26,7 +26,7 @@ export default function HomeLayout() {
         options={{
           title: "Presença",
           tabBarIcon: ({ color }) => (
-            <Feather size={20} name="map" color={color} />
+            <Feather size={18} name="map" color={color} />
           ),
         }}
       />
@@ -35,7 +35,7 @@ export default function HomeLayout() {
         options={{
           title: "Etiquetas",
           tabBarIcon: ({ color }) => (
-            <Feather size={20} name="tag" color={color} />
+            <Feather size={18} name="tag" color={color} />
           ),
         }}
       />

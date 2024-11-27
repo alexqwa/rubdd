@@ -4,7 +4,7 @@ import { Feather } from "@expo/vector-icons"
 import { Header } from "@/src/components/Header"
 import { ListOfDepartaments } from "@/src/components/ListOfDepartaments"
 
-const data = ["DPH", "Bebidas", "Perecíveis", "Seca doce", "Seca salgada"]
+const data = ["DPH", "BEBIDAS", "PERECÍVEIS", "SECA DOCE", "SECA SALGADA"]
 
 export default function Home() {
   return (
@@ -17,7 +17,7 @@ export default function Home() {
           </Text>
           <View className="flex-col items-end">
             <Text className="text-white font-rajdhani_700 text-sm">
-              24/06/2024 - 06:30
+              25/11/2024 - 06:30
             </Text>
             <Text className="text-white font-rajdhani_700 text-sm">
               Segunda-feira

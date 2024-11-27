@@ -9,7 +9,7 @@ export default function AuthLayout() {
         tabBarStyle: {
           backgroundColor: "#202024",
           borderTopWidth: 0,
-          height: 80,
+          height: 100,
         },
         tabBarActiveTintColor: "#F7DD43",
         tabBarInactiveTintColor: "#8D8D99",
@@ -26,16 +26,16 @@ export default function AuthLayout() {
         options={{
           title: "Autenticação",
           tabBarIcon: ({ color }) => (
-            <Feather size={20} name="key" color={color} />
+            <Feather size={18} name="key" color={color} />
           ),
         }}
       />
       <Tabs.Screen
-        name="servers"
+        name="settings"
         options={{
-          title: "Servidores",
+          title: "Configurações",
           tabBarIcon: ({ color }) => (
-            <Feather size={20} name="server" color={color} />
+            <Feather size={18} name="settings" color={color} />
           ),
         }}
       />
