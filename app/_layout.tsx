@@ -15,6 +15,7 @@ import {
   Poppins_700Bold,
 } from "@expo-google-fonts/poppins"
 import * as SplashScreen from "expo-splash-screen"
+import "@/src/hooks/dayjs"
 
 SplashScreen.preventAutoHideAsync()
 

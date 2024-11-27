@@ -1,3 +1,4 @@
+import dayjs from "dayjs"
 import { View, Text } from "react-native"
 import { Feather } from "@expo/vector-icons"
 
@@ -6,7 +7,14 @@ import { ListOfDepartaments } from "@/src/components/ListOfDepartaments"
 
 const data = ["DPH", "BEBIDAS", "PERECÍVEIS", "SECA DOCE", "SECA SALGADA"]
 
-export default function Home() {
+type TagsProps = {
+  date: Date
+}
+
+export default function Tags({ date }: TagsProps) {
+  const dayOfWeek = dayjs(date).format("dddd")
+  const dateOfMonth = dayjs(date).format("DD/MM/YYYY")
+
   return (
     <View className="items-center bg-background flex-1">
       <Header title="Auditoria de Etiquetas" back={false} />
@@ -17,10 +25,10 @@ export default function Home() {
           </Text>
           <View className="flex-col items-end">
             <Text className="text-white font-rajdhani_700 text-sm">
-              25/11/2024 - 06:30
+              {dateOfMonth}
             </Text>
             <Text className="text-white font-rajdhani_700 text-sm">
-              Segunda-feira
+              {dayOfWeek}
             </Text>
           </View>
         </View>
