@@ -3,13 +3,17 @@ import { router } from "expo-router"
 import { Feather } from "@expo/vector-icons"
 import { View, Text, TouchableOpacity } from "react-native"
 
-type ListOfStreetsProps = {
+type ListDepartamentsProps = {
   title: string
   active: boolean
   address: string
 }
 
-export function ListOfStreets({ title, active, address }: ListOfStreetsProps) {
+export function ListDepartaments({
+  title,
+  active,
+  address,
+}: ListDepartamentsProps) {
   return (
     <View className="w-full h-13 flex-row mb-2">
       <View className="w-[40px] rounded-l-lg bg-foreground items-center justify-center border border-outline">
@@ -26,7 +30,7 @@ export function ListOfStreets({ title, active, address }: ListOfStreetsProps) {
       <TouchableOpacity
         disabled={!active}
         activeOpacity={0.7}
-        onPress={active ? () => router.push(`/${address}`) : undefined}
+        onPress={active ? () => router.push(`/presence/${address}`) : undefined}
         className={clsx(
           "bg-foreground flex-1 rounded-r-lg items-center justify-evenly border border-outline flex-row",
           {
@@ -34,8 +38,8 @@ export function ListOfStreets({ title, active, address }: ListOfStreetsProps) {
           }
         )}
       >
-        <Feather name="edit" size={16} color="#fff" />
-        <Text className="text-white font-rajdhani_700">Editar</Text>
+        <Feather name="external-link" size={16} color="#fff" />
+        <Text className="text-white font-rajdhani_700">Abrir</Text>
       </TouchableOpacity>
     </View>
   )

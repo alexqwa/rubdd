@@ -3,7 +3,7 @@ import { View, Text } from "react-native"
 import { Feather } from "@expo/vector-icons"
 
 import { Header } from "@/src/components/Header"
-import { ListOfDepartaments } from "@/src/components/ListOfDepartaments"
+import { ListDepartaments } from "@/src/components/tags/ListDepartaments"
 
 const data = ["DPH", "BEBIDAS", "PERECÍVEIS", "SECA DOCE", "SECA SALGADA"]
 
@@ -35,7 +35,7 @@ export default function Tags({ date }: TagsProps) {
 
         {Array.from({ length: data.length }).map((_, i) => {
           return (
-            <ListOfDepartaments
+            <ListDepartaments
               key={i}
               title={data[i]}
               address={data[i]}

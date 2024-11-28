@@ -2,7 +2,7 @@ import { useLocalSearchParams } from "expo-router"
 import { View, Text, ScrollView } from "react-native"
 
 import { Header } from "@/src/components/Header"
-import { ListOfStreets } from "@/src/components/ListOfStreets"
+import { ListStreets } from "@/src/components/tags/ListStreets"
 
 const data = [
   "Corredor 11",
@@ -18,7 +18,7 @@ export default function StreetRoute() {
 
   return (
     <View className="flex-1 items-center bg-background">
-      <Header title="Presença" parameter={id.toString()} back={true} />
+      <Header title="Etiquetas" parameter={id.toString()} back={true} />
       <View className="w-full flex-1 max-w-[90%] mt-10">
         <Text className="text-white font-rajdhani_700 text-2xl mb-5">
           Corredores
@@ -30,7 +30,7 @@ export default function StreetRoute() {
         >
           {Array.from({ length: data.length }).map((_, i) => {
             return (
-              <ListOfStreets
+              <ListStreets
                 key={i}
                 title={data[i]}
                 address={data[i]}
