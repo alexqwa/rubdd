@@ -1,0 +1,72 @@
+{
+  "departament_environments": [
+    { "active": true, "key": "dph", "title": "DPH" },
+    { "active": true, "key": "liquid", "title": "BEBIDAS" },
+    { "active": true, "key": "perishables", "title": "PERECÍVEIS" },
+    { "active": true, "key": "sweet_dry", "title": "SECA DOCE" },
+    { "active": true, "key": "salty_drought", "title": "SECA SALGADA" }
+  ],
+  "streets": [
+    {
+      "id": 1,
+      "environments": ["liquid"],
+      "street": [
+        { "active": true, "title": "Corredor 01" },
+        { "active": true, "title": "Corredor 02" },
+        { "active": true, "title": "Corredor 03" },
+        { "active": true, "title": "Corredor 04" }
+      ]
+    },
+    {
+      "id": 2,
+      "environments": ["dph"],
+      "street": [
+        { "active": true, "title": "Corredor 05" },
+        { "active": true, "title": "Corredor 06" },
+        { "active": true, "title": "Corredor 07" },
+        { "active": true, "title": "Corredor 08" },
+        { "active": true, "title": "Corredor 09" },
+        { "active": true, "title": "Corredor 10" },
+        { "active": true, "title": "Corredor 11" },
+        { "active": true, "title": "Havaianas" }
+      ]
+    },
+    {
+      "id": 3,
+      "environments": ["sweet_dry"],
+      "street": [
+        { "active": true, "title": "Corredor 11" },
+        { "active": true, "title": "Corredor 13" },
+        { "active": true, "title": "Corredor 15" },
+        { "active": true, "title": "Corredor 17" },
+        { "active": true, "title": "Checkstand" }
+      ]
+    },
+    {
+      "id": 4,
+      "environments": ["salty_drought"],
+      "street": [
+        { "active": true, "title": "Corredor 12" },
+        { "active": true, "title": "Corredor 14" },
+        { "active": true, "title": "Corredor 16" },
+        { "active": true, "title": "Corredor 18" },
+        { "active": true, "title": "Corredor 20" }
+      ]
+    },
+    {
+      "id": 4,
+      "environments": ["perishables"],
+      "street": [
+        { "active": true, "title": "Açougue" },
+        { "active": true, "title": "Defumados" },
+        { "active": true, "title": "Freezer 1" },
+        { "active": true, "title": "Freezer 2" },
+        { "active": true, "title": "Ilha Congelado 1" },
+        { "active": true, "title": "Ilha Congelado 2" },
+        { "active": true, "title": "Ilha Congelado 3" },
+        { "active": true, "title": "Padaria" },
+        { "active": true, "title": "Sorvetes" }
+      ]
+    }
+  ]
+}

@@ -1,17 +1,14 @@
 import dayjs from "dayjs"
-import { View, Text, ScrollView } from "react-native"
 import { Feather } from "@expo/vector-icons"
+import { View, Text, ScrollView } from "react-native"
 
 import { Header } from "@/src/components/Header"
 import { ListDepartaments } from "@/src/components/tags/ListDepartaments"
 
 const data = ["DPH", "BEBIDAS", "PERECÍVEIS", "SECA DOCE", "SECA SALGADA"]
 
-type TagsProps = {
-  date: Date
-}
-
-export default function Tags({ date }: TagsProps) {
+export default function Tags() {
+  const date = new Date()
   const dayOfWeek = dayjs(date).format("dddd")
   const dateOfMonth = dayjs(date).format("DD/MM/YYYY")
 
@@ -19,6 +16,7 @@ export default function Tags({ date }: TagsProps) {
     <View className="items-center bg-background flex-1">
       <Header title="Auditoria de Etiquetas" back={false} />
       <ScrollView
+        showsVerticalScrollIndicator={false}
         contentContainerStyle={{ alignItems: "center" }}
         className="flex-1 w-full"
       >

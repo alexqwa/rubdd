@@ -20,6 +20,7 @@ export default function AuthHome() {
         behavior={Platform.OS === "ios" ? "padding" : "height"}
       >
         <ScrollView
+          showsVerticalScrollIndicator={false}
           contentContainerStyle={{
             alignItems: "center",
           }}
