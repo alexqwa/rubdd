@@ -1,7 +1,6 @@
-import { router } from "expo-router"
 import { useState, useEffect } from "react"
-import { useLocalSearchParams } from "expo-router"
 import { View, Text, FlatList } from "react-native"
+import { router, useLocalSearchParams } from "expo-router"
 
 import { streets } from "@/src/hooks/seeds.json"
 

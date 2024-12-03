@@ -1,16 +1,35 @@
 import dayjs from "dayjs"
+import { router } from "expo-router"
+import { useState, useEffect } from "react"
 import { Feather } from "@expo/vector-icons"
-import { View, Text, ScrollView } from "react-native"
+import { View, Text, ScrollView, FlatList } from "react-native"
+
+import { departament_environments } from "@/src/hooks/seeds.json"
 
 import { Header } from "@/src/components/Header"
 import { ListDepartaments } from "@/src/components/tags/ListDepartaments"
 
-const data = ["DPH", "BEBIDAS", "PERECÍVEIS", "SECA DOCE", "SECA SALGADA"]
+interface EnviromentsProps {
+  key: string
+  title: string
+  active: boolean
+}
 
 export default function Tags() {
+  const [environments, setEnvironments] = useState<EnviromentsProps[]>([])
+
   const date = new Date()
   const dayOfWeek = dayjs(date).format("dddd")
   const dateOfMonth = dayjs(date).format("DD/MM/YYYY")
+
+  useEffect(() => {
+    function fetchEnviroments() {
+      const data = departament_environments
+      setEnvironments([...data])
+    }
+
+    fetchEnviroments()
+  }, [])
 
   return (
     <View className="items-center bg-background flex-1">
@@ -35,16 +54,27 @@ export default function Tags() {
             </View>
           </View>
 
-          {Array.from({ length: data.length }).map((_, i) => {
-            return (
+          <FlatList
+            data={environments}
+            keyExtractor={(item) => String(item.key)}
+            renderItem={({ item }) => (
               <ListDepartaments
-                key={i}
-                title={data[i]}
-                address={data[i]}
-                active={false}
+                title={item.title}
+                active={item.active}
+                onPress={
+                  item.active
+                    ? () =>
+                        router.push({
+                          pathname: "/tags/[id]",
+                          params: { id: item.key, title: item.title },
+                        })
+                    : undefined
+                }
               />
-            )
-          })}
+            )}
+            showsVerticalScrollIndicator={false}
+            scrollEnabled={false}
+          />
 
           <View className="border-dashed border rounded-lg border-zinc-400 w-full p-6 mt-10">
             <View className="flex-row space-x-4 items-center justify-center">

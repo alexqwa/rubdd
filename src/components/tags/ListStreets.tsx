@@ -1,15 +1,19 @@
 import clsx from "clsx"
 import { router } from "expo-router"
 import { Feather } from "@expo/vector-icons"
-import { View, Text, TouchableOpacity } from "react-native"
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  TouchableOpacityProps,
+} from "react-native"
 
-type ListStreetsProps = {
+interface ListStreetsProps extends TouchableOpacityProps {
   title: string
   active: boolean
-  address: string
 }
 
-export function ListStreets({ title, active, address }: ListStreetsProps) {
+export function ListStreets({ title, active, ...rest }: ListStreetsProps) {
   return (
     <View className="w-full h-13 flex-row mb-2">
       <View className="w-[40px] rounded-l-lg bg-foreground items-center justify-center border border-outline">
@@ -24,15 +28,13 @@ export function ListStreets({ title, active, address }: ListStreetsProps) {
         <Text className="text-white text-base font-rajdhani_700">{title}</Text>
       </View>
       <TouchableOpacity
+        {...rest}
         disabled={!active}
         activeOpacity={0.7}
-        onPress={
-          active ? () => router.push(`/tags/street/${address}`) : undefined
-        }
         className={clsx(
           "bg-foreground flex-1 rounded-r-lg items-center justify-evenly border border-outline flex-row",
           {
-            ["bg-foreground/80"]: active === false,
+            ["opacity-70"]: active === false,
           }
         )}
       >
