@@ -19,16 +19,30 @@ export default function Tags() {
   const [environments, setEnvironments] = useState<EnviromentsProps[]>([])
 
   const date = new Date()
+  const today = dayjs(date).day()
   const dayOfWeek = dayjs(date).format("dddd")
   const dateOfMonth = dayjs(date).format("DD/MM/YYYY")
 
   useEffect(() => {
-    function fetchEnviroments() {
-      const data = departament_environments
-      setEnvironments([...data])
+    function fetchEnvironments() {
+      const updatedEnvironments = departament_environments.map(
+        (environment) => {
+          // Verifica se o dia atual está presente no array de weekdays
+          const isActive = environment.weekday.some(
+            (day) => day.week_day === today
+          )
+
+          return {
+            ...environment,
+            active: isActive, // Define active com base na verificação
+          }
+        }
+      )
+
+      setEnvironments(updatedEnvironments)
     }
 
-    fetchEnviroments()
+    fetchEnvironments()
   }, [])
 
   return (

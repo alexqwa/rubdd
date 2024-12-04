@@ -8,7 +8,7 @@ export function Dropdown() {
   const toggleExpanded = useCallback(() => setExpanded(!expanded), [expanded])
 
   return (
-    <View className="mt-4">
+    <View>
       <TouchableOpacity
         className={clsx(
           "bg-foreground h-13 border border-outline rounded-lg justify-between flex-row items-center px-4",

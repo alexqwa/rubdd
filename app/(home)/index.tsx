@@ -19,17 +19,31 @@ export default function Home() {
   const [environments, setEnvironments] = useState<EnviromentsProps[]>([])
 
   const date = new Date()
+  const today = dayjs(date).day()
   const weekday = dayjs(date).format("dddd")
   const dateOfMonth = dayjs(date).format("DD/MM/YYYY")
 
   useEffect(() => {
-    function fetchEnviroments() {
-      const data = departament_environments
-      setEnvironments([...data])
+    function fetchEnvironments() {
+      const updatedEnvironments = departament_environments.map(
+        (environment) => {
+          // Verifica se o dia atual está presente no array de weekdays
+          const isActive = environment.weekday.some(
+            (day) => day.week_day === today
+          )
+
+          return {
+            ...environment,
+            active: isActive, // Define active com base na verificação
+          }
+        }
+      )
+
+      setEnvironments(updatedEnvironments)
     }
 
-    fetchEnviroments()
-  }, [])
+    fetchEnvironments()
+  }, [today])
 
   return (
     <View className="items-center bg-background flex-1">
@@ -56,7 +70,7 @@ export default function Home() {
 
           <FlatList
             data={environments}
-            keyExtractor={(item) => String(item.key)}
+            keyExtractor={(item) => item.key}
             renderItem={({ item }) => (
               <ListDepartaments
                 title={item.title}

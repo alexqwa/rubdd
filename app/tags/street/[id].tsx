@@ -5,29 +5,28 @@ import { Dropdown } from "@/src/components/Dropdown"
 import { Header } from "@/src/components/Header"
 
 const data = [
-  "38149: LAVA ROUPAS PO OMO CX 800G PURO CUIDADO",
-  "38149: LAVA ROUPAS PO OMO CX 800G PURO CUIDADO",
-  "38149: LAVA ROUPAS PO OMO CX 800G PURO CUIDADO",
-  "38149: LAVA ROUPAS PO OMO CX 800G PURO CUIDADO",
-  "38149: LAVA ROUPAS PO OMO CX 800G PURO CUIDADO",
-  "38149: LAVA ROUPAS PO OMO CX 800G PURO CUIDADO",
-  "38149: LAVA ROUPAS PO OMO CX 800G PURO CUIDADO",
-  "38149: LAVA ROUPAS PO OMO CX 800G PURO CUIDADO",
+  "38149: PRODUTO EM TESTES PRODUTO EM TESTES......",
+  "38149: PRODUTO EM TESTES PRODUTO EM TESTES......",
+  "38149: PRODUTO EM TESTES PRODUTO EM TESTES......",
+  "38149: PRODUTO EM TESTES PRODUTO EM TESTES......",
+  "38149: PRODUTO EM TESTES PRODUTO EM TESTES......",
+  "38149: PRODUTO EM TESTES PRODUTO EM TESTES......",
+  "38149: PRODUTO EM TESTES PRODUTO EM TESTES......",
+  "38149: PRODUTO EM TESTES PRODUTO EM TESTES......",
+  "38149: PRODUTO EM TESTES PRODUTO EM TESTES......",
 ]
 
 export default function StreetRoute() {
-  const { id } = useLocalSearchParams()
+  const { title } = useLocalSearchParams()
 
   return (
     <View className="flex-1 items-center bg-background">
-      <Header title="Etiquetas" parameter={id.toString()} back={true} />
-      <View className="mt-10 flex-1 w-full max-w-[90%]">
-        <View className="w-full space-y-3">
-          <Text className="text-white text-lg font-rajdhani_700">
-            Formas de manipulação
-          </Text>
-          <Dropdown />
-        </View>
+      <Header title="Etiquetas" parameter={title.toString()} back={true} />
+      <View className="w-full flex-1 max-w-[90%] mt-10">
+        <Text className="text-white font-rajdhani_700 text-2xl mb-5">
+          Formas de manipulação
+        </Text>
+        <Dropdown />
 
         <View className="flex-1">
           <Text className="text-white text-lg font-rajdhani_700 mt-10 mb-4">

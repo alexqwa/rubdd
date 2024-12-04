@@ -1,71 +1,347 @@
 {
   "departament_environments": [
-    { "active": true, "key": "dph", "title": "DPH" },
-    { "active": true, "key": "liquid", "title": "BEBIDAS" },
-    { "active": true, "key": "perishables", "title": "PERECÍVEIS" },
-    { "active": true, "key": "sweet_dry", "title": "SECA DOCE" },
-    { "active": true, "key": "salty_drought", "title": "SECA SALGADA" }
+    {
+      "active": true,
+      "weekday": [{ "week_day": 1 }, { "week_day": 4 }],
+      "key": "dph",
+      "title": "DPH"
+    },
+    {
+      "active": true,
+      "weekday": [{ "week_day": 1 }],
+      "key": "liquid",
+      "title": "BEBIDAS"
+    },
+    {
+      "active": true,
+      "weekday": [{ "week_day": 3 }],
+      "key": "perishables",
+      "title": "PERECÍVEIS"
+    },
+    {
+      "ative": true,
+      "weekday": [{ "week_day": 5 }],
+      "key": "sweet_dry",
+      "title": "SECA DOCE"
+    },
+    {
+      "active": true,
+      "weekday": [{ "week_day": 2 }],
+      "key": "salty_drought",
+      "title": "SECA SALGADA"
+    }
   ],
   "streets": [
     {
       "id": 1,
       "environments": ["liquid"],
       "street": [
-        { "active": true, "title": "Corredor 01" },
-        { "active": true, "title": "Corredor 02" },
-        { "active": true, "title": "Corredor 03" },
-        { "active": true, "title": "Corredor 04" }
+        {
+          "weekday": 1,
+          "active": true,
+          "code": "LJA-01-A-000",
+          "title": "Corredor 01 Lado A"
+        },
+        {
+          "weekday": 1,
+          "active": true,
+          "code": "LJA-01-B-000",
+          "title": "Corredor 01 Lado B"
+        },
+        {
+          "weekday": 1,
+          "active": true,
+          "code": "LJA-02-A-000",
+          "title": "Corredor 02 Lado A"
+        },
+        {
+          "weekday": 1,
+          "active": true,
+          "code": "LJA-02-B-000",
+          "title": "Corredor 02 Lado B"
+        },
+        {
+          "weekday": 1,
+          "active": true,
+          "code": "LJA-03-A-000",
+          "title": "Corredor 03 Lado A"
+        },
+        {
+          "weekday": 1,
+          "active": true,
+          "code": "LJA-03-B-000",
+          "title": "Corredor 03 Lado B"
+        },
+        {
+          "weekday": 1,
+          "active": true,
+          "code": "LJA-04-A-000",
+          "title": "Corredor 04 Lado A"
+        },
+        {
+          "weekday": 1,
+          "active": true,
+          "code": "LJA-04-B-000",
+          "title": "Corredor 04 Lado B"
+        }
       ]
     },
     {
       "id": 2,
       "environments": ["dph"],
       "street": [
-        { "active": true, "title": "Corredor 05" },
-        { "active": true, "title": "Corredor 06" },
-        { "active": true, "title": "Corredor 07" },
-        { "active": true, "title": "Corredor 08" },
-        { "active": true, "title": "Corredor 09" },
-        { "active": true, "title": "Corredor 10" },
-        { "active": true, "title": "Corredor 11" },
-        { "active": true, "title": "Havaianas" }
+        {
+          "weekday": 4,
+          "active": true,
+          "code": "LJA-05-A-000",
+          "title": "Corredor 05 Lado A"
+        },
+        {
+          "weekday": 4,
+          "active": true,
+          "code": "LJA-05-B-000",
+          "title": "Corredor 05 Lado B"
+        },
+        {
+          "weekday": 4,
+          "active": true,
+          "code": "LJA-06-A-000",
+          "title": "Corredor 06 Lado A"
+        },
+        {
+          "weekday": 4,
+          "active": true,
+          "code": "LJA-06-B-000",
+          "title": "Corredor 06 Lado B"
+        },
+        {
+          "weekday": 4,
+          "active": true,
+          "code": "LJA-07-A-000",
+          "title": "Corredor 07 Lado A"
+        },
+        {
+          "weekday": 4,
+          "active": true,
+          "code": "LJA-07-B-000",
+          "title": "Corredor 07 Lado B"
+        },
+        {
+          "weekday": 4,
+          "active": true,
+          "code": "LJA-08-A-000",
+          "title": "Corredor 08 Lado A"
+        },
+        {
+          "weekday": 4,
+          "active": true,
+          "code": "LJA-08-B-000",
+          "title": "Corredor 08 Lado B"
+        },
+        {
+          "weekday": 4,
+          "active": true,
+          "code": "LJA-09-A-000",
+          "title": "Corredor 09 Lado A"
+        },
+        {
+          "weekday": 4,
+          "active": true,
+          "code": "LJA-09-B-000",
+          "title": "Corredor 09 Lado B"
+        },
+        {
+          "weekday": 1,
+          "active": true,
+          "code": "LJA-10-A-000",
+          "title": "Corredor 10 Lado A"
+        },
+        {
+          "weekday": 1,
+          "active": true,
+          "code": "LJA-10-B-000",
+          "title": "Corredor 10 Lado B"
+        },
+        {
+          "weekday": 1,
+          "active": true,
+          "code": "LJA-11-A-000",
+          "title": "Corredor 11 Lado A"
+        },
+        {
+          "weekday": 4,
+          "active": true,
+          "code": "HAV-01-A-000",
+          "title": "Havaianas"
+        }
       ]
     },
     {
       "id": 3,
       "environments": ["sweet_dry"],
       "street": [
-        { "active": true, "title": "Corredor 11" },
-        { "active": true, "title": "Corredor 13" },
-        { "active": true, "title": "Corredor 15" },
-        { "active": true, "title": "Corredor 17" },
-        { "active": true, "title": "Checkstand" }
+        {
+          "weekday": 5,
+          "active": true,
+          "code": "LJA-11-B-000",
+          "title": "Corredor 11 Lado B"
+        },
+        {
+          "weekday": 5,
+          "active": true,
+          "code": "LJA-13-A-000",
+          "title": "Corredor 13 Lado A"
+        },
+        {
+          "weekday": 5,
+          "active": true,
+          "code": "LJA-13-B-000",
+          "title": "Corredor 13 Lado B"
+        },
+        {
+          "weekday": 5,
+          "active": true,
+          "code": "LJA-15-A-000",
+          "title": "Corredor 15 Lado A"
+        },
+        {
+          "weekday": 5,
+          "active": true,
+          "code": "LJA-15-B-000",
+          "title": "Corredor 15 Lado B"
+        },
+        {
+          "weekday": 5,
+          "active": true,
+          "code": "LJA-17-A-000",
+          "title": "Corredor 17 Lado A"
+        },
+        {
+          "weekday": 5,
+          "active": true,
+          "code": "LJA-17-B-000",
+          "title": "Corredor 17 Lado B"
+        },
+        {
+          "weekday": 5,
+          "active": true,
+          "code": "CHS-01-A-000",
+          "title": "Checkstand"
+        }
       ]
     },
     {
       "id": 4,
       "environments": ["salty_drought"],
       "street": [
-        { "active": true, "title": "Corredor 12" },
-        { "active": true, "title": "Corredor 14" },
-        { "active": true, "title": "Corredor 16" },
-        { "active": true, "title": "Corredor 18" },
-        { "active": true, "title": "Corredor 20" }
+        {
+          "weekday": 2,
+          "active": true,
+          "code": "LJA-12-A-000",
+          "title": "Corredor 12 Lado A"
+        },
+        {
+          "weekday": 2,
+          "active": true,
+          "code": "LJA-12-B-000",
+          "title": "Corredor 12 Lado B"
+        },
+        {
+          "weekday": 2,
+          "active": true,
+          "code": "LJA-14-A-000",
+          "title": "Corredor 14 Lado A"
+        },
+        {
+          "weekday": 2,
+          "active": true,
+          "code": "LJA-14-B-000",
+          "title": "Corredor 14 Lado B"
+        },
+        {
+          "weekday": 2,
+          "active": true,
+          "code": "LJA-16-A-000",
+          "title": "Corredor 16 Lado A"
+        },
+        {
+          "weekday": 2,
+          "active": true,
+          "code": "LJA-16-B-000",
+          "title": "Corredor 16 Lado B"
+        },
+        {
+          "weekday": 2,
+          "active": true,
+          "code": "LJA-18-A-000",
+          "title": "Corredor 18 Lado A"
+        },
+        {
+          "weekday": 2,
+          "active": true,
+          "code": "LJA-20-A-000",
+          "title": "Corredor 20 Lado A"
+        }
       ]
     },
     {
       "id": 5,
       "environments": ["perishables"],
       "street": [
-        { "active": true, "title": "Açougue" },
-        { "active": true, "title": "Defumados" },
-        { "active": true, "title": "Freezer 1" },
-        { "active": true, "title": "Freezer 2" },
-        { "active": true, "title": "Ilha Congelado 1" },
-        { "active": true, "title": "Ilha Congelado 2" },
-        { "active": true, "title": "Ilha Congelado 3" },
-        { "active": true, "title": "Padaria" },
-        { "active": true, "title": "Sorvetes" }
+        {
+          "weekday": 3,
+          "active": true,
+          "code": "ACG-01-A-000",
+          "title": "Açougue"
+        },
+        {
+          "weekday": 3,
+          "active": true,
+          "code": "DEF-01-A-000",
+          "title": "Defumados"
+        },
+        {
+          "weekday": 3,
+          "active": true,
+          "code": "LAT-01-A-000",
+          "title": "Freezer Laticínios 1"
+        },
+        {
+          "weekday": 3,
+          "active": true,
+          "code": "LAT-02-A-000",
+          "title": "Freezer Laticínios 2"
+        },
+        {
+          "weekday": 3,
+          "active": true,
+          "code": "ILH-01-A-000",
+          "title": "Ilha Congelado 1"
+        },
+        {
+          "weekday": 3,
+          "active": true,
+          "code": "ILH-02-B-000",
+          "title": "Ilha Congelado 2"
+        },
+        {
+          "weekday": 3,
+          "active": true,
+          "code": "ILH-03-C-000",
+          "title": "Ilha Congelado 3"
+        },
+        {
+          "weekday": 3,
+          "active": true,
+          "code": "PAD-01-A-000",
+          "title": "Padaria"
+        },
+        {
+          "weekday": 3,
+          "active": true,
+          "code": "SOR-01-A-000",
+          "title": "Sorvetes"
+        }
       ]
     }
   ]

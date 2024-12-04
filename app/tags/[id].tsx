@@ -1,3 +1,4 @@
+import dayjs from "dayjs"
 import { useState, useEffect } from "react"
 import { View, Text, FlatList } from "react-native"
 import { router, useLocalSearchParams } from "expo-router"
@@ -8,13 +9,18 @@ import { Header } from "@/src/components/Header"
 import { ListStreets } from "@/src/components/tags/ListStreets"
 
 interface Street {
-  active: boolean
+  code: string
   title: string
+  active: boolean
+  weekday: number
 }
 
 export default function StreetRoute() {
   const { id, title } = useLocalSearchParams()
   const [streetSelected, setStreetSelected] = useState<Street[]>([])
+
+  const date = new Date()
+  const today = dayjs(date).day()
 
   useEffect(() => {
     function getStreetsByEnvironment(environment: string) {
@@ -22,14 +28,24 @@ export default function StreetRoute() {
         street.environments.includes(environment)
       )
       if (streetData) {
-        setStreetSelected(streetData.street)
+        // Filtra as ruas que têm o weekday igual ao dia atual
+        // const filteredStreets = streetData.street.filter(
+        //   (street: Street) => street.weekday === today
+        // )
+
+        // Mapeia as ruas e ajusta o valor de active
+        const updatedStreets = streetData.street.map((street: Street) => ({
+          ...street,
+          active: street.weekday === today ? street.active : false, // Define active como false se o weekday não for igual ao dia atual
+        }))
+        setStreetSelected(updatedStreets)
       } else {
         setStreetSelected([])
       }
     }
 
     getStreetsByEnvironment(id.toString())
-  }, [id])
+  }, [id, streets, today])
 
   return (
     <View className="flex-1 items-center bg-background">
@@ -41,7 +57,7 @@ export default function StreetRoute() {
 
         <FlatList
           data={streetSelected}
-          keyExtractor={(item) => String(item.title)}
+          keyExtractor={(item) => String(item.code)}
           renderItem={({ item }) => (
             <ListStreets
               title={item.title}
@@ -51,13 +67,14 @@ export default function StreetRoute() {
                   ? () =>
                       router.push({
                         pathname: "/tags/street/[id]",
-                        params: { id: item.title },
+                        params: { id: item.code, title: item.title },
                       })
                   : undefined
               }
             />
           )}
           showsVerticalScrollIndicator={false}
+          contentContainerStyle={{ paddingBottom: 60 }}
         />
       </View>
     </View>
