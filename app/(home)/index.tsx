@@ -1,10 +1,10 @@
-import dayjs from "dayjs"
 import { router } from "expo-router"
 import { useState, useEffect } from "react"
 import { Feather } from "@expo/vector-icons"
 import { View, Text, ScrollView, FlatList } from "react-native"
 
-import { departament_environments } from "@/src/hooks/seeds.json"
+import { today, weekday, date_month } from "@/src/lib/dayjs"
+import { departament_environments } from "@/src/lib/seeds.json"
 
 import { Header } from "@/src/components/Header"
 import { ListDepartaments } from "@/src/components/presence/ListDepartaments"
@@ -17,11 +17,6 @@ interface EnviromentsProps {
 
 export default function Home() {
   const [environments, setEnvironments] = useState<EnviromentsProps[]>([])
-
-  const date = new Date()
-  const today = dayjs(date).day()
-  const weekday = dayjs(date).format("dddd")
-  const dateOfMonth = dayjs(date).format("DD/MM/YYYY")
 
   useEffect(() => {
     function fetchEnvironments() {
@@ -60,7 +55,7 @@ export default function Home() {
             </Text>
             <View className="flex-col items-end">
               <Text className="text-white font-rajdhani_700 text-sm">
-                {dateOfMonth}
+                {date_month}
               </Text>
               <Text className="text-white font-rajdhani_700 text-sm">
                 {weekday}

@@ -15,13 +15,9 @@ import {
   Poppins_700Bold,
 } from "@expo-google-fonts/poppins"
 import * as SplashScreen from "expo-splash-screen"
-import "@/src/hooks/dayjs"
+import "@/src/lib/dayjs"
 
 SplashScreen.preventAutoHideAsync()
-
-// export const unstable_settings = {
-//   initialRouteName: "/(tabs)/index",
-// }
 
 export default function RootLayout() {
   const [fontsLoaded, fontError] = useFonts({

@@ -1,8 +1,8 @@
 import { useLocalSearchParams } from "expo-router"
 import { View, Text, ScrollView } from "react-native"
 
-import { Dropdown } from "@/src/components/Dropdown"
 import { Header } from "@/src/components/Header"
+import { Dropdown } from "@/src/components/Dropdown"
 
 const data = [
   "38149: PRODUTO EM TESTES PRODUTO EM TESTES......",

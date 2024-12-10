@@ -1,9 +1,9 @@
-import dayjs from "dayjs"
+import { today } from "@/src/lib/dayjs"
 import { useState, useEffect } from "react"
 import { View, Text, FlatList } from "react-native"
 import { router, useLocalSearchParams } from "expo-router"
 
-import { streets } from "@/src/hooks/seeds.json"
+import { streets } from "@/src/lib/seeds.json"
 
 import { Header } from "@/src/components/Header"
 import { ListStreets } from "@/src/components/presence/ListStreets"
@@ -19,20 +19,12 @@ export default function StreetRoute() {
   const { id, title } = useLocalSearchParams()
   const [streetSelected, setStreetSelected] = useState<Street[]>([])
 
-  const date = new Date()
-  const today = dayjs(date).day()
-
   useEffect(() => {
     function getStreetsByEnvironment(environment: string) {
       const streetData = streets.find((street) =>
         street.environments.includes(environment)
       )
       if (streetData) {
-        // Filtra as ruas que têm o weekday igual ao dia atual
-        // const filteredStreets = streetData.street.filter(
-        //   (street: Street) => street.weekday === today
-        // )
-
         // Mapeia as ruas e ajusta o valor de active
         const updatedStreets = streetData.street.map((street: Street) => ({
           ...street,
