@@ -1,7 +1,5 @@
 # Projeto de Gerenciamento de Lojas em Tempo Real
 
-## Descrição do Projeto
-
 Este projeto visa desenvolver uma plataforma integrada para gerenciar a operação de lojas em tempo real. A ferramenta permite a identificação e controle de inconsistências de preço, rupturas de exposição, além de gerenciar a entrada e saída de mercadorias. O objetivo é reduzir perdas e facilitar a tomada de decisões baseadas em dados, tudo em uma única interface.
 
 ## Funcionalidades
@@ -33,12 +31,6 @@ Este projeto visa desenvolver uma plataforma integrada para gerenciar a operaç�
 
 - **Backend**: 
   - Node.js com Express
-
-- **Banco de Dados**: 
-  - PostgreSQL
-
-- **Ferramentas de Análise**: 
-  - Pandas, Matplotlib (para análises no backend)
 
 ## Instalação
 
