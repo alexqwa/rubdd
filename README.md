@@ -1,4 +1,4 @@
-# README do Projeto de Gerenciamento de Lojas em Tempo Real
+# Projeto de Gerenciamento de Lojas em Tempo Real
 
 ## Descrição do Projeto
 
