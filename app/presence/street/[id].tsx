@@ -17,7 +17,7 @@ const data = [
 ]
 
 export default function StreetRoute() {
-  const { title } = useLocalSearchParams()
+  const { id, title } = useLocalSearchParams()
 
   return (
     <View className="flex-1 items-center bg-background">
