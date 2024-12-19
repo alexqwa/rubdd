@@ -16,7 +16,7 @@ const data = [
   "38149: PRODUTO EM TESTES PRODUTO EM TESTES......",
 ]
 
-export default function StreetRoute() {
+export default function PresenceRoute() {
   const { id, title } = useLocalSearchParams()
 
   return (

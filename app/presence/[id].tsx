@@ -1,8 +1,8 @@
-import { today } from "@/src/lib/dayjs"
 import { useState, useEffect } from "react"
 import { View, Text, FlatList } from "react-native"
 import { router, useLocalSearchParams } from "expo-router"
 
+import { today } from "@/src/lib/dayjs"
 import { streets } from "@/src/lib/seeds.json"
 
 import { Header } from "@/src/components/Header"
@@ -15,7 +15,7 @@ interface Street {
   weekday: number
 }
 
-export default function StreetRoute() {
+export default function PresenceRoute() {
   const { id, title } = useLocalSearchParams()
   const [streetSelected, setStreetSelected] = useState<Street[]>([])
 
