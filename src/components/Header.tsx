@@ -27,11 +27,10 @@ export function Header({ title, parameter, back }: HeaderProps) {
             {title}
           </Text>
           {parameter ? (
-            <Text className="text-white font-rajdhani_700 text-base">: </Text>
+            <Text className="text-white font-rajdhani_700 text-base">
+              : {parameter}
+            </Text>
           ) : null}
-          <Text className="text-white font-rajdhani_700 text-base">
-            {parameter}
-          </Text>
         </View>
       </View>
     </View>

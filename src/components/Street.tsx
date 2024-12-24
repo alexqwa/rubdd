@@ -7,16 +7,12 @@ import {
   TouchableOpacityProps,
 } from "react-native"
 
-interface ListDepartamentsProps extends TouchableOpacityProps {
+interface StreetProps extends TouchableOpacityProps {
   title: string
   active: boolean
 }
 
-export function ListDepartaments({
-  title,
-  active,
-  ...rest
-}: ListDepartamentsProps) {
+export function Street({ title, active, ...rest }: StreetProps) {
   return (
     <View className="w-full h-13 flex-row mb-2">
       <View className="w-[40px] rounded-l-lg bg-foreground items-center justify-center border border-outline">
@@ -37,12 +33,12 @@ export function ListDepartaments({
         className={clsx(
           "bg-foreground flex-1 rounded-r-lg items-center justify-evenly border border-outline flex-row",
           {
-            ["opacity-70"]: active === false,
+            ["bg-foreground/80"]: active === false,
           }
         )}
       >
-        <Feather name="external-link" size={16} color="#ffff" />
-        <Text className="text-white font-rajdhani_700">Abrir</Text>
+        <Feather name="edit" size={16} color="#fff" />
+        <Text className="text-white font-rajdhani_700">Editar</Text>
       </TouchableOpacity>
     </View>
   )

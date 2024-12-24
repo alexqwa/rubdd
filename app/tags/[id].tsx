@@ -6,7 +6,7 @@ import { today } from "@/src/lib/dayjs"
 import { streets } from "@/src/lib/seeds.json"
 
 import { Header } from "@/src/components/Header"
-import { ListStreets } from "@/src/components/tags/ListStreets"
+import { Street } from "@/src/components/Street"
 
 interface Street {
   code: string
@@ -51,7 +51,7 @@ export default function StreetRoute() {
           data={streetSelected}
           keyExtractor={(item) => String(item.code)}
           renderItem={({ item }) => (
-            <ListStreets
+            <Street
               title={item.title}
               active={item.active}
               onPress={

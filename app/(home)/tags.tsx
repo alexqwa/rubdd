@@ -1,13 +1,19 @@
 import { router } from "expo-router"
 import { useState, useEffect } from "react"
 import { Feather } from "@expo/vector-icons"
-import { View, Text, ScrollView, FlatList } from "react-native"
+import {
+  View,
+  Text,
+  ScrollView,
+  FlatList,
+  ActivityIndicator,
+} from "react-native"
 
 import { today, weekday, date_month } from "@/src/lib/dayjs"
 import { departament_environments } from "@/src/lib/seeds.json"
 
 import { Header } from "@/src/components/Header"
-import { ListDepartaments } from "@/src/components/tags/ListDepartaments"
+import { Departament } from "@/src/components/Departament"
 
 interface EnviromentsProps {
   key: string
@@ -16,6 +22,7 @@ interface EnviromentsProps {
 }
 
 export default function Tags() {
+  const [loading, setLoading] = useState(true)
   const [environments, setEnvironments] = useState<EnviromentsProps[]>([])
 
   useEffect(() => {
@@ -35,6 +42,7 @@ export default function Tags() {
       )
 
       setEnvironments(updatedEnvironments)
+      setLoading(false)
     }
 
     fetchEnvironments()
@@ -63,39 +71,42 @@ export default function Tags() {
             </View>
           </View>
 
-          <FlatList
-            data={environments}
-            keyExtractor={(item) => String(item.key)}
-            renderItem={({ item }) => (
-              <ListDepartaments
-                title={item.title}
-                active={item.active}
-                onPress={
-                  item.active
-                    ? () =>
-                        router.push({
-                          pathname: "/tags/[id]",
-                          params: { id: item.key, title: item.title },
-                        })
-                    : undefined
-                }
-              />
-            )}
-            showsVerticalScrollIndicator={false}
-            scrollEnabled={false}
-          />
-
-          <View className="border-dashed border rounded-lg border-zinc-400 w-full p-6 mt-10">
-            <View className="flex-row space-x-4 items-center justify-center">
-              <Feather name="alert-circle" size={24} color="#fff" />
-              <Text className="text-white/80 font-rajdhani_700 text-sm leading-snug">
-                Use as funções deste app com segurança. Tenha cuidado para
-                evitar problemas maiores!
-              </Text>
-            </View>
-          </View>
+          {loading ? (
+            <ActivityIndicator size="small" color="#fff" />
+          ) : (
+            <FlatList
+              data={environments}
+              keyExtractor={(item) => String(item.key)}
+              renderItem={({ item }) => (
+                <Departament
+                  title={item.title}
+                  active={item.active}
+                  onPress={
+                    item.active
+                      ? () =>
+                          router.push({
+                            pathname: "/tags/[id]",
+                            params: { id: item.key, title: item.title },
+                          })
+                      : undefined
+                  }
+                />
+              )}
+              showsVerticalScrollIndicator={false}
+              scrollEnabled={false}
+            />
+          )}
         </View>
       </ScrollView>
+      <View className="mb-10 border-dashed border rounded-lg border-zinc-400 max-w-[90%] w-full p-6">
+        <View className="flex-row space-x-4 items-center justify-center">
+          <Feather name="alert-circle" size={24} color="#fff" />
+          <Text className="text-white/80 font-rajdhani_700 text-sm leading-snug">
+            Use as funções deste app com segurança. Tenha cuidado para evitar
+            problemas maiores!
+          </Text>
+        </View>
+      </View>
     </View>
   )
 }
