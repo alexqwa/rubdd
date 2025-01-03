@@ -1,9 +1,9 @@
 {
   "expo": {
     "newArchEnabled": true,
-    "name": "RUB",
-    "slug": "RUB",
-    "version": "1.0.4",
+    "name": "RUB UNLOCKED",
+    "slug": "RUB UNLOCKED",
+    "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
@@ -17,12 +17,13 @@
       "supportsTablet": true
     },
     "android": {
-      "versionCode": 5,
+      "permissions": ["ACCESS_FINE_LOCATION", "ACCESS_WIFI_STATE"],
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#121214"
       },
-      "package": "com.outumegames.rumbdd"
+      "package": "com.outumegames.rubdd"
     },
     "web": {
       "bundler": "metro",

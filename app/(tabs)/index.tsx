@@ -1,17 +1,30 @@
+import clsx from "clsx"
+import { useState, useEffect } from "react"
 import { router } from "expo-router"
 import {
   View,
   Text,
-  TextInput,
-  TouchableOpacity,
-  ScrollView,
-  KeyboardAvoidingView,
   Platform,
+  TextInput,
+  ScrollView,
+  TouchableOpacity,
+  KeyboardAvoidingView,
 } from "react-native"
+import NetInfo from "@react-native-community/netinfo"
 
 import { Header } from "@/src/components/Header"
 
 export default function AuthHome() {
+  const [isConnected, setIsConnected] = useState<boolean | null>(null)
+
+  useEffect(() => {
+    const unsubscribe = NetInfo.addEventListener((state) => {
+      setIsConnected(state.isConnected)
+    })
+
+    return unsubscribe()
+  }, [isConnected])
+
   return (
     <View className="bg-background flex-1 items-center">
       <Header title="Autenticação" back={false} />
@@ -38,15 +51,17 @@ export default function AuthHome() {
             </Text>
 
             <View className="space-y-3 w-full mt-6">
-              <View className="relative">
-                <TextInput
-                  editable={false}
-                  selectionColor="#F7DD43"
-                  placeholderTextColor="#8D8D99"
-                  placeholder="HTTP://10.46.3.223:4280"
-                  className="w-full bg-foreground text-[#8D8D99] placeholder:font-rajdhani_700 rounded-lg px-4 h-13 border border-outline"
+              <View className="relative w-full bg-foreground justify-center rounded-lg px-4 h-13 border border-outline">
+                <Text className="text-[#8D8D99] font-rajdhani_700">
+                  HTTP://10.46.3.223:4280
+                </Text>
+                <View
+                  className={clsx("rounded-full h-2 w-2 absolute right-4", {
+                    ["bg-yellow-500"]: isConnected === null,
+                    ["bg-green-500"]: isConnected === true,
+                    ["bg-red-500"]: isConnected === false,
+                  })}
                 />
-                <View className="h-2 w-2 rounded-full bg-green-500 absolute right-6 top-[21px]" />
               </View>
               <TextInput
                 selectionColor="#F7DD43"

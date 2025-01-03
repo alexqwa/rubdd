@@ -1,5 +1,6 @@
-import { Header } from "@/src/components/Header"
 import { View, Text } from "react-native"
+
+import { Header } from "@/src/components/Header"
 
 export default function Settings() {
   return (
@@ -7,10 +8,9 @@ export default function Settings() {
       <Header back={false} title="Configurações" />
       <View className="flex-1 justify-center items-center w-full max-w-[90%]">
         <Text className="text-white font-rajdhani_700 text-lg">
-          Nada aqui por enquanto...
+          Nada por aqui no momento...
         </Text>
       </View>
     </View>
   )
 }
-//
